@@ -1,17 +1,13 @@
-Простой калькулятор на <a href="">PySide6</a>
+Simple calc created by PySide6
 
-<h1>Функции:</h1>
+<h1>Functions:</h1>
 
 <ul>
-<li>Сложение</li>
-<li>Вычитание</li>
-<li>Умножение</li>
-<li>Деление</li>
-<li>Вычисление процента</li>
-<li>Возведение в степень</li>
-<li>Нахождение модуля (|x|)</li>
-<li>Деление единицы</li>
+<li>Additiom</li>
+<li>Subtraction</li>
+<li>Multiplication</li>
+<li>Division</li>
 </ul>
 
-<h1>Требования</h1>
+<h1>Requirements</h1>
 <code>pip install -r requirements.txt</code>
