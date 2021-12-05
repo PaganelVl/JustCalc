@@ -10,8 +10,6 @@ class Calculator(QMainWindow):
                           'btn_5', 'btn_6', 'btn_7', 'btn_8', 'btn_9',
                           'btn_plus', 'btn_min', 'btn_max', 'btn_div',
                           'btn_point', 'btn_equal', 'btn_exp')
-        special_func = ('btn_C', 'btn_CE', 'btn_backspace', 'btn_percent',
-                        'btn_module', 'btn_onediv')
         
         if btn.objectName() in digit_and_func:
             if self.ui.lineEdit.text() == '0':
@@ -21,10 +19,10 @@ class Calculator(QMainWindow):
 
     def calc(self):
         if '^' in self.ui.lineEdit.text():
-            self.ui.lineEdit.SetText(self.ui.lineEdit.text().replace('^', '**'))
+            self.ui.lineEdit.setText(self.ui.lineEdit.text().replace('^', '**'))
         res = eval(self.ui.lineEdit.text())
         if '**' in self.ui.lineEdit.text():
-            self.ui.lineEdit.SetText(self.ui.lineEdit.text().replace('**', '^'))
+            self.ui.lineEdit.setText(self.ui.lineEdit.text().replace('**', '^'))
         self.ui.label.setText(f'{res}')
 
     def __init__(self):
