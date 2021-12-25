@@ -1,4 +1,5 @@
 import sys
+import math
 from PySide6.QtWidgets import QApplication, QMainWindow
 from design import Ui_MainWindow
 
@@ -9,9 +10,25 @@ class Calculator(QMainWindow):
         digit_and_func = ('btn_0', 'btn_1', 'btn_2', 'btn_3', 'btn_4',
                           'btn_5', 'btn_6', 'btn_7', 'btn_8', 'btn_9',
                           'btn_plus', 'btn_min', 'btn_max', 'btn_div',
-                          'btn_point', 'btn_equal', 'btn_exp')
-        
-        if btn.objectName() in digit_and_func:
+                          'btn_point', 'btn_equal', 'btn_exp', 'btn_l_bracket', 'btn_r_bracket')
+        special_func = ('btn_abs', 'btn_negative', 'btn_radical', 'btn_pi')
+
+        if btn.objectName() in special_func:
+            if btn.objectName() == 'btn_abs':
+                self.ui.lineEdit.setText(f'abs({self.ui.lineEdit.text()})')
+            elif btn.objectName() == 'btn_negative':
+                if self.ui.lineEdit.text() == '0':
+                    self.ui.lineEdit.setText('-')
+                else:
+                    self.ui.lineEdit.setText(self.ui.lineEdit.text() + '-')
+            elif btn.objectName() == 'btn_radical':
+                self.ui.lineEdit.setText(f'math.sqrt({self.ui.lineEdit.text()})')
+            elif btn.objectName() == 'btn_pi':
+                if self.ui.lineEdit.text() == '0':
+                    self.ui.lineEdit.setText(f'{math.pi}')
+                else:
+                    self.ui.lineEdit.setText(self.ui.lineEdit.text() + f'{math.pi}')
+        elif btn.objectName() in digit_and_func:
             if self.ui.lineEdit.text() == '0':
                 self.ui.lineEdit.setText(btn.text())
             else:
@@ -46,6 +63,12 @@ class Calculator(QMainWindow):
         self.ui.btn_div.clicked.connect(self.add_digit_and_func)
         self.ui.btn_point.clicked.connect(self.add_digit_and_func)
         self.ui.btn_exp.clicked.connect(self.add_digit_and_func)
+        self.ui.btn_abs.clicked.connect(self.add_digit_and_func)
+        self.ui.btn_negative.clicked.connect(self.add_digit_and_func)
+        self.ui.btn_radical.clicked.connect(self.add_digit_and_func)
+        self.ui.btn_pi.clicked.connect(self.add_digit_and_func)
+        self.ui.btn_l_bracket.clicked.connect(self.add_digit_and_func)
+        self.ui.btn_r_bracket.clicked.connect(self.add_digit_and_func)
         self.ui.btn_equal.clicked.connect(self.calc)
         self.ui.btn_equal.clicked.connect(self.add_digit_and_func)
 
