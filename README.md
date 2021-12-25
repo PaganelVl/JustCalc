@@ -1,14 +1,18 @@
-Простой калькулятор на PySide6
+Simple calc on PySide6
 
-<h1>Функции:</h1>
+<h1>Functions:</h1>
 
 <ul>
-<li>Сложение</li>
-<li>Вычитание</li>
-<li>Умножение</li>
-<li>Деление</li>
-<li>Возведение в степень</li>
+<li>Addition</li>
+<li>Subtraction</li>
+<li>Multiplication</li>
+<li>Division</li>
+<li>Exponentiation</li>
+<li>Square root</li>
+<li>Absolute value</li>
+<li>Brackets</li>
+<li>Pi</li>
 </ul>
 
-<h1>Требования</h1>
-<code>pip install -r requirements.txt</code>
+<h1>Requirements</h1>
+Open <code>requirements.cmd</code> on Windows or <code>pip install -r requirements.txt</code>
